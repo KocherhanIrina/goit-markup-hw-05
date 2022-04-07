@@ -538,7 +538,7 @@ color: #AFB1B8;
 }
 /* _________________JOIN__________ */
 
-.join-box{
+.join-box {
   margin-left: 70px;
   margin-top: 12px;
 }
@@ -556,9 +556,15 @@ color: #AFB1B8;
 .join-box .join-list {
   display: flex;
 }
+
 .join-list .join-item:not(:last-child) {
   margin-right: 10px;
 }
+
+.join-icon {
+  fill: var(--header-bg-color);
+}
+
 .join-list .join-link {
   display: flex;
   justify-content: center;
@@ -566,7 +572,8 @@ color: #AFB1B8;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);;
+  background-color: rgba(255, 255, 255, 0.1);
+  ;
 }
 
 .join-link:hover,
@@ -618,6 +625,15 @@ padding: 20px 24px;
   font-size: 16px;
   line-height: 1.88;
 }
+/* ___________SHADOW CARTS */
+
+.project-list .portfolio-item:hover {
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+0px 4px 4px rgba(0, 0, 0, 0.06),
+1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+
 /* _____________Стилизация кнопок______________  */
 .button-list {
   display: flex;
