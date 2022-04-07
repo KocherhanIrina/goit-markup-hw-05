@@ -71,9 +71,12 @@ button {
 /* ___________________________________HEADER____________________________________________ */
 
 .header {
+  /* position: absolute;
+  width: 100%; */
   padding-top: 24px;
   padding-bottom: 25px;
 }
+
 
 .logo {
   text-decoration: none;
@@ -104,8 +107,25 @@ button {
 .link-contact:focus {
   color: var(--accent-color);
 }
+
+/* _________________NAV___+__CURENT________________ */
+
+
 .site-nav .curent {
   color: var(--accent-color);
+  position: relative;
+}
+
+
+.curent::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  display: block;
+  position: absolute;
+  bottom: -32px;
 }
 
 .site-nav {
