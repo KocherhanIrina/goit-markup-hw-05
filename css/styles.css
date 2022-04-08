@@ -7,6 +7,9 @@
   --white-text-color: #fff;
   --futter-bg-color: #2f303a;
   --header-bg-color: #ffffff;
+
+  --smooth-transitions: transition: color 1000ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Стили для index.html */
 
@@ -40,9 +43,10 @@ ul, ol {
 button {
   cursor: pointer;
 }
- img {
+
+img {
   display: block;
- }
+}
 .container {
   width: 1200px;
   padding-left: 15px;
@@ -71,12 +75,9 @@ button {
 /* ___________________________________HEADER____________________________________________ */
 
 .header {
-  /* position: absolute;
-  width: 100%; */
   padding-top: 24px;
   padding-bottom: 25px;
 }
-
 
 .logo {
   text-decoration: none;
@@ -89,20 +90,37 @@ button {
   letter-spacing: 0.02em;
   text-decoration: none;
 }
-
+/* tel+mail */
 .site-contacts .link-contact {
-  color: var(--primary-text-color);
+  
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
-}
 
-.site-contacts .address:hover,
-.site-contacts .address:hover {
+  color: var(--primary-text-color);
+  
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* _______________LOGO-HEADER____________ */
+.logo .web {
   color: var(--accent-color);
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
 }
 
+.logo .studio {
+  color: #000000;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+/* HOVER HEADER */
 .link-contact:hover,
 .link-contact:focus {
   color: var(--accent-color);
@@ -110,12 +128,10 @@ button {
 
 /* _________________NAV___+__CURENT________________ */
 
-
 .site-nav .curent {
   color: var(--accent-color);
   position: relative;
 }
-
 
 .curent::after {
   content: "";
@@ -186,6 +202,7 @@ button {
   margin: 0 auto;
   margin-bottom: 30px;
 }
+
 .button.primary {
   background-color: var(--accent-color);
   color: var(--white-text-color);
@@ -232,8 +249,6 @@ button {
   line-height: 1.71;
 }
 
-.feature-list 
-
 .feature-item-antenna::before {
   background: #F5F4FA;
   border-radius: 4px;
@@ -257,8 +272,6 @@ button {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../images/clock\ 1.svg);
-  
-
 }
 .feature-item-diagram::before {
   background: #F5F4FA;
@@ -293,7 +306,6 @@ button {
   text-align: center;
   letter-spacing: 0.03em;
   margin-bottom: 50px;
-
 }
 .work {
 padding-top: 47px;
@@ -305,13 +317,13 @@ padding-bottom: 94px;
 }
 .work-item:not(:last-child) {
   margin-right: 30px;
-
 }
-/* ___________________WORK-HIDDEN_______________ */
+/* ___________________WORK-HIDDEN (полупрозрачні підложки під фото)_______________ */
 
 .hidden-img {
   position: relative;
 }
+
 .hidden-work {
 position: absolute;
 width: 100%;
@@ -334,6 +346,7 @@ background-color: rgba(47, 48, 58, 0.8);;
   text-transform: uppercase;
   color: var(--header-bg-color);
 }
+
 /* ___________________________________TEAM____________________________________________ */
 .team {
   background-color: #f5f4fa;
@@ -348,7 +361,6 @@ background-color: rgba(47, 48, 58, 0.8);;
   text-align: center;
   margin-bottom: 50px;
 }
-
 .team .team-list {
   display: flex;
 }
@@ -361,11 +373,9 @@ background-color: rgba(47, 48, 58, 0.8);;
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
-
 .team-item:not(:last-child) {
   margin-right: 30px;
 }
-
  .team-img {
   display: block;
 }
@@ -373,7 +383,6 @@ background-color: rgba(47, 48, 58, 0.8);;
   padding-top: 30px;
   padding-bottom: 16px;
 }
-
 .team-item .team-item-title {
   color: var(--title-text-color);
   font-weight: 500;
@@ -385,10 +394,7 @@ background-color: rgba(47, 48, 58, 0.8);;
   font-size: 16px;
   line-height: 1.19;
 }
-
-
-/* _______ICONS_____________ */
-
+/* _______TEAM-SOCIALS-ICONS (іконки соц-сітей)_____________ */
 
 .team-list .team-social-list {
   display: flex;
@@ -397,11 +403,6 @@ background-color: rgba(47, 48, 58, 0.8);;
 .team-social-list .team-item-soc:not(:last-child) {
   margin-right: 10px;
 }
-/* .team-icon-blok {
-  padding-top: 16px;
-  padding-bottom: 30px;
-} */
-
 .team-social-list .team-icon-link {
 width: 44px;
 height: 44px;
@@ -410,24 +411,21 @@ justify-content: center;
 align-items: center;
 border-radius: 50%;
 color: #AFB1B8;
-}
+background-color: var(--header-bg-color);
 
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .team-icon-link .team-icon {
   width: 20px;
   height: 20px;
   fill: currentColor;
 }
-
-.team-icon-link:hover .team-icon, 
-.team-icon-link:focus .team-icon {
-  color: var(--header-bg-color);
-}
-
 .team-icon-link:hover,
 .team-icon-link:focus {
   background-color: #2196f3;
+  color: var(--header-bg-color);
 }
-
 /* ___________________________________CLIENTS____________________________________________ */
 
 .clients {
@@ -465,7 +463,9 @@ color: #AFB1B8;
   align-items: center;
   border: 1px solid #AFB1B8;
   border-radius: 4px;
-  color: #AFB1B8;;
+  color: #AFB1B8;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link .clients-icon {
@@ -480,7 +480,6 @@ color: #AFB1B8;
   border-color: var(--accent-color);
 }
 /* ___________________________________FOOTER____________________________________________ */
-
 .footer {
   background-color: var(--futter-bg-color);
   padding-top: 60px;
@@ -510,36 +509,17 @@ color: #AFB1B8;
   font-size: 26px;
   line-height: 1.2;
 }
-
-.logo .web {
-  color: var(--accent-color);
-  font-family: Raleway, sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
-}
-
-.logo .studio {
-  color: #000000;
-  font-family: Raleway, sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
-}
-
+/* __________Факт-Адресса-FOOTER____________ */
 .site-contacts .address {
   color: var(--white-text-color);
   line-height: 1.71;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-contacts .mailto:hover,
-.site-contacts .mailto:focus {
-  color: var(--accent-color);
-}
-
-.site-contacts .tel:hover,
-.site-contacts .tel:focus {
+.site-contacts .address:hover,
+.site-contacts .address:hover {
   color: var(--accent-color);
 }
 
@@ -548,8 +528,17 @@ color: #AFB1B8;
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.71;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.site-contacts .mailto:hover,
+.site-contacts .mailto:focus {
+  color: var(--accent-color);
+}
+.site-contacts .tel:hover,
+.site-contacts .tel:focus {
+  color: var(--accent-color);
+}
 .contakts-footer {
   margin-top: 20px;
 }
@@ -577,7 +566,7 @@ color: #AFB1B8;
   display: flex;
 }
 
-.join-list .join-item:not(:last-child) {
+.join-item:not(:last-child) {
   margin-right: 10px;
 }
 
@@ -585,7 +574,7 @@ color: #AFB1B8;
   fill: var(--header-bg-color);
 }
 
-.join-list .join-link {
+.join-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -593,14 +582,15 @@ color: #AFB1B8;
   height: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
-  ;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .join-link:hover,
 .join-link:focus {
   background-color: var(--accent-color);
 }
-
 
 /* _____________________СТРАНИЦА portfolio.html_____________________________________*/
 .header-portfolio {
@@ -611,24 +601,28 @@ color: #AFB1B8;
   padding-bottom: 94px;
 }
 
-.portfolio-item {
-margin-right: 30px;
-margin-bottom: 30px;
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.portfolio-item:hover .portfolio-top-text {
-  transform: translate(0);
+.portfolio-item {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.portfolio-item:nth-child(3n) {
+  margin-right: 0px;
+}
+
+.portfolio-item:nth-last-child(-n + 3) {
+  margin-bottom: 0px;
 }
 
 .portfolio-text-wrap {
   position: relative;
   overflow: hidden;
 }
-.portfolio-item:nth-child(3n) {
-  margin-right: 0px;
-}
-.portfolio-item:nth-last-child(-n + 3) {
-  margin-bottom: 0px;
-}
+
 .portfolio-top-text {
   position: absolute;
   top: 0;
@@ -640,14 +634,15 @@ margin-bottom: 30px;
   background: rgba(33, 150, 243, 0.9);
   padding: 63px 24px;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);}
-
+}
+.portfolio-item:hover .portfolio-top-text {
+  transform: translate(0);
+}
 .portfolio-item-wrap {
   border: 1px solid #EEEEEE;
   box-sizing: border-box;
   padding: 20px 24px;
-  }
-
+}
 .project-title {
   color: var(--title-text-color);
   font-weight: 700;
@@ -656,22 +651,18 @@ margin-bottom: 30px;
   letter-spacing: 0.06em;
   margin-bottom: 4px;
 }
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 .project-text {
-  font-size: 16px;
-  line-height: 1.88;
+ font-size: 16px;
+ line-height: 1.88;
 }
 /* ___________SHADOW CARTS */
 
 .project-list .portfolio-item:hover,
 .project-list .portfolio-item:focus {
-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
-0px 4px 4px rgba(0, 0, 0, 0.06),
-1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+  0px 4px 4px rgba(0, 0, 0, 0.06),
+  1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 
@@ -749,13 +740,13 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
   z-index: 18;
   opacity: 1;
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   min-width: 528px;
   min-height: 581px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+  0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
   background-color: #fff;
